@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"baseUrl": ".",
+		"outDir": "./dist",
+		"rootDir": ".",
+		"lib": ["ESNext", "DOM"],
+		"skipDefaultLibCheck": true,
+		"target": "ES6",
+		"jsx": "react-jsx",
+		"strict": true,
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"removeComments": true,
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"alwaysStrict": true,
+		"noImplicitAny": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUncheckedIndexedAccess": false,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"importsNotUsedAsValues": "error"
+	},
+	"watchOptions": {
+		"excludeDirectories": ["./**/node_modules"]
+	},
+	"include": ["./**/*"],
+	"exclude": ["./node_modules", "./dist", "./build"]
+}
