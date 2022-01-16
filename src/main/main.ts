@@ -14,10 +14,6 @@ function createWindow() {
 	win.loadFile(join(process.cwd(), "public", "index.html"));
 }
 
-ipcMain.on("notify", (_, message: string) => {
-	new Notification({ title: "Notification", body: message }).show();
-});
-
 app.whenReady().then(() => {
 	createWindow();
 
@@ -32,4 +28,8 @@ app.on("window-all-closed", () => {
 	if (process.platform !== "darwin") {
 		app.quit();
 	}
+});
+
+ipcMain.on("notify", (_, message: string) => {
+	new Notification({ title: "Notification", body: message }).show();
 });

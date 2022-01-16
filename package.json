@@ -12,7 +12,7 @@
 		"electron:build": "electron-builder"
 	},
 	"build": {
-		"appId": "zevon.dk"
+		"appId": "dk.zevon"
 	},
 	"dependencies": {
 		"@emotion/react": "^11.7.1",
