@@ -11,7 +11,7 @@ function createWindow() {
 		},
 	});
 
-	win.loadFile(join(process.cwd(), "public", "index.html"));
+	win.loadFile(join(process.cwd(), "dist", "index.html"));
 }
 
 app.whenReady().then(() => {

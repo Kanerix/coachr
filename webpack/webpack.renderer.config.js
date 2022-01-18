@@ -1,7 +1,8 @@
-const { resolve } = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { resolve, join } = require("path");
 
 module.exports = {
-	mode: "development", // process.env.NODE_ENV,
+	mode: "development",
 	target: "electron-renderer",
 	entry: "./src/renderer/index.tsx",
 	devtool: "inline-source-map",
@@ -18,4 +19,9 @@ module.exports = {
 	module: {
 		rules: require("./webpack.rules.config.js"),
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template: join(process.cwd(), "webpack", "template", "index.html"),
+		}),
+	],
 };

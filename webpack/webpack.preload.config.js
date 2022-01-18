@@ -1,7 +1,7 @@
 const { resolve } = require("path");
 
 module.exports = {
-	mode: "development", // process.env.NODE_ENV,
+	mode: "development",
 	target: "electron-preload",
 	entry: "./src/preload/preload.ts",
 	output: {
