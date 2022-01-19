@@ -1,8 +1,4 @@
-import {
-	ThemeProvider,
-	useTheme,
-	useThemeUpdate,
-} from "./context/ThemeContext";
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
 export function App() {
 	/*const notify = () => {
@@ -10,14 +6,20 @@ export function App() {
 		electron.notificationApi.notify("Toggle theme");
 	};*/
 
-	const theme = useTheme();
-	const themeUpdate = useThemeUpdate();
+	const { theme, setTheme } = useTheme();
+
+	const test = () => {
+		console.log(theme);
+		setTheme(() => {
+			return theme == "dark" ? "light" : "dark";
+		});
+	};
 
 	return (
 		<ThemeProvider>
 			<button
 				style={{ background: theme ? "#333" : "#ccc" }}
-				onClick={themeUpdate}
+				onClick={test}
 			>
 				Toggle theme
 			</button>

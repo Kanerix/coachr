@@ -1,32 +1,35 @@
-import { createContext, useContext, useState } from "react";
+import {
+	createContext,
+	Dispatch,
+	ReactNode,
+	SetStateAction,
+	useContext,
+	useState,
+} from "react";
+//import themes from "../themes";
 
-const ThemeContext = createContext<boolean>(true);
-const ThemeUpdateContext = createContext<any>(null);
+const ThemeContext = createContext<boolean | undefined>(undefined);
 
 export function useTheme() {
-	return useContext(ThemeContext);
-}
+	const context = useContext(ThemeContext);
 
-export function useThemeUpdate() {
-	return useContext(ThemeUpdateContext);
+	if (!context) {
+		throw new Error("useTheme must be used inside a ThemeProvider");
+	}
+
+	return context;
 }
 
 interface ThemeProviderProps {
-	children: JSX.Element;
+	children: ReactNode;
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-	const [darkTheme, setDarkTheme] = useState(true);
-
-	function changeTheme() {
-		setDarkTheme((prevDarkTheme) => !prevDarkTheme);
-	}
+	const [theme, setTheme] = useState<boolean>(true);
 
 	return (
-		<ThemeContext.Provider value={darkTheme}>
-			<ThemeUpdateContext.Provider value={changeTheme}>
-				{children}
-			</ThemeUpdateContext.Provider>
+		<ThemeContext.Provider value={{ theme, setTheme }}>
+			{children}
 		</ThemeContext.Provider>
 	);
 }
