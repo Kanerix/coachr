@@ -12,6 +12,12 @@ module.exports = {
 		extensions: [".ts"],
 	},
 	module: {
-		rules: require("./webpack.rules.config.js"),
+		rules: [
+			{
+				test: /\.ts$/i,
+				loader: "ts-loader",
+				exclude: /node_modules/,
+			},
+		],
 	},
 };

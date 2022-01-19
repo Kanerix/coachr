@@ -1,5 +1,6 @@
+import { CssBaseline } from "@mui/material";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { ThemeProvider } from "./context/ThemeContext";
+import { CustomThemeProvider } from "./context/ColorModeContext";
 import { Home } from "./pages/Home";
 
 export function App() {
@@ -9,12 +10,13 @@ export function App() {
 	};*/
 
 	return (
-		<ThemeProvider>
+		<CustomThemeProvider>
+			<CssBaseline />
 			<HashRouter>
 				<Routes>
 					<Route path="/" element={<Home />} />
 				</Routes>
 			</HashRouter>
-		</ThemeProvider>
+		</CustomThemeProvider>
 	);
 }

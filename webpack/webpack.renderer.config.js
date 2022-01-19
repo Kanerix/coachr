@@ -17,7 +17,13 @@ module.exports = {
 		extensions: [".ts", ".tsx", ".js"],
 	},
 	module: {
-		rules: require("./webpack.rules.config.js"),
+		rules: [
+			{
+				test: /\.tsx?$/,
+				loader: "ts-loader",
+				exclude: /node_modules/,
+			},
+		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({

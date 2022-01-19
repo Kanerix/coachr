@@ -1,7 +1,15 @@
-import dark from "./dark";
+import { createTheme, Theme } from "@mui/material";
+import darkMode from "./dark";
+import lightMode from "./light";
 
-const themes = {
-	dark: dark,
-};
+export type IThemes = "dark" | "light";
 
-export default themes;
+export default function getMode(theme: IThemes): Theme {
+	switch (theme) {
+		case "dark":
+			return createTheme(darkMode);
+
+		case "light":
+			return createTheme(lightMode);
+	}
+}
