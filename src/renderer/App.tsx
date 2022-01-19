@@ -1,4 +1,6 @@
-import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
+import { Home } from "./pages/Home";
 
 export function App() {
 	/*const notify = () => {
@@ -6,23 +8,13 @@ export function App() {
 		electron.notificationApi.notify("Toggle theme");
 	};*/
 
-	const { theme, setTheme } = useTheme();
-
-	const test = () => {
-		console.log(theme);
-		setTheme(() => {
-			return theme == "dark" ? "light" : "dark";
-		});
-	};
-
 	return (
 		<ThemeProvider>
-			<button
-				style={{ background: theme ? "#333" : "#ccc" }}
-				onClick={test}
-			>
-				Toggle theme
-			</button>
+			<HashRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</HashRouter>
 		</ThemeProvider>
 	);
 }
