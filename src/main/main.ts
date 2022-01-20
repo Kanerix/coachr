@@ -5,7 +5,7 @@ function createWindow() {
 	const win = new BrowserWindow({
 		width: 1000,
 		height: 750,
-		frame: false,
+		autoHideMenuBar: true,
 		webPreferences: {
 			preload: join(process.cwd(), "dist", "preload.js"),
 		},

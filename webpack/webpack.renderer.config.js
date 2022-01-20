@@ -14,7 +14,7 @@ module.exports = {
 		path: resolve(process.cwd(), "dist"),
 	},
 	resolve: {
-		extensions: [".ts", ".tsx", ".js"],
+		extensions: [".ts", ".tsx", ".js", ".css", ".svg"],
 	},
 	module: {
 		rules: [
@@ -22,6 +22,10 @@ module.exports = {
 				test: /\.tsx?$/,
 				loader: "ts-loader",
 				exclude: /node_modules/,
+			},
+			{
+				test: /\.css$/i,
+				use: ["style-loader", "css-loader"],
 			},
 		],
 	},

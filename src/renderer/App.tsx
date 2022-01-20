@@ -1,8 +1,12 @@
-import { CssBaseline } from "@mui/material";
+import "@fontsource/fira-sans";
+import "simplebar/dist/simplebar.min.css";
+import { Box, CssBaseline } from "@mui/material";
 import { HashRouter, Route, Routes } from "react-router-dom";
-import Sidenav from "./components/Sidenav";
+
+import Sidenav, { drawerWidth } from "./components/Sidenav";
 import Topnav from "./components/Topnav";
 import { CustomThemeProvider } from "./context/ColorModeContext";
+import { Dash } from "./pages/Dash";
 import { Home } from "./pages/Home";
 
 export function App() {
@@ -13,13 +17,16 @@ export function App() {
 
 	return (
 		<CustomThemeProvider>
-			<CssBaseline />
-			<Topnav />
-			<Sidenav />
 			<HashRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-				</Routes>
+				<CssBaseline />
+				<Topnav />
+				<Sidenav />
+				<Box sx={{ marginLeft: `${drawerWidth}px` }}>
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/dash" element={<Dash />} />
+					</Routes>
+				</Box>
 			</HashRouter>
 		</CustomThemeProvider>
 	);
