@@ -2,11 +2,13 @@ import { Theme, ThemeProvider } from "@mui/material";
 import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 import getMode, { IThemes } from "../themes";
 
-export interface ISetColorMode {
+export interface IColorModeContext {
 	setColorMode: (newTheme: IThemes) => void;
 }
 
-const ColorModeContext = createContext<ISetColorMode | undefined>(undefined);
+const ColorModeContext = createContext<IColorModeContext | undefined>(
+	undefined
+);
 
 export function useColorMode() {
 	const context = useContext(ColorModeContext);
@@ -26,7 +28,7 @@ interface IColorModeProviderProps {
 
 export function CustomThemeProvider({ children }: IColorModeProviderProps) {
 	const [mode, setMode] = useState<IThemes>("dark");
-	const colorMode = useMemo<ISetColorMode>(
+	const colorMode = useMemo<IColorModeContext>(
 		() => ({
 			setColorMode: (newTheme: IThemes) => {
 				console.log(newTheme);
