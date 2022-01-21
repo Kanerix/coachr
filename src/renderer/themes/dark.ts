@@ -5,6 +5,10 @@ const darkTheme: ThemeOptions = createTheme({
 	...BaseTheme,
 	palette: {
 		mode: "dark",
+		background: {
+			paper: "#111827",
+			default: "#0b0f19",
+		},
 	},
 });
 

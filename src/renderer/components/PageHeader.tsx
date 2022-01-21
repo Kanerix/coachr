@@ -3,23 +3,19 @@ import { Box } from "@mui/system";
 
 interface IPageHeaderProps {
 	header: string;
-	margin?: boolean;
 }
 
-export default function PageHeader({
-	header,
-	margin = true,
-}: IPageHeaderProps) {
+export default function PageHeader({ header }: IPageHeaderProps) {
 	return (
 		<Box
 			sx={(theme) => ({
-				margin: () => (margin ? theme.spacing(2) : "0px"),
+				margin: () => theme.spacing(0, 0, 2, 0),
 			})}
 		>
 			<Typography
 				variant="h4"
 				sx={(theme) => ({
-					margin: theme.spacing(2),
+					margin: theme.spacing(0, 2, 2, 2),
 				})}
 			>
 				{header}

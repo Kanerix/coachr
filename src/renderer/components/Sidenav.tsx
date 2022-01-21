@@ -8,31 +8,41 @@ import {
 	ListItemButton,
 	Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 
 import type { ISidenavItemProps } from "../types/pages";
 import { DashSidenavProps } from "../pages/Dash";
 import { HomeSidenavProps } from "../pages/Home";
-import PosturLogo from "../assets/PosturLogo";
+import CoachrLogo from "../assets/CoachrLogo";
+import { GoalsSidenavProps } from "../pages/Goals";
+import { AchievementsSidenavProps } from "../pages/Achievments";
+import { RemindersSidenavProps } from "../pages/Reminders";
+import { MenuHeight } from "./Menu";
 
 export const drawerWidth = 200;
 
 export default function Sidenav() {
+	const location = useLocation();
+
 	const SidenavItems: ISidenavItemProps[] = [
 		HomeSidenavProps,
 		DashSidenavProps,
+		GoalsSidenavProps,
+		AchievementsSidenavProps,
+		RemindersSidenavProps,
 	];
 
 	return (
 		<Drawer
-			variant="permanent"
+			variant="persistent"
 			open={true}
-			sx={{
+			sx={(_) => ({
 				"& .MuiDrawer-paper": {
 					width: `${drawerWidth}px`,
+					marginTop: `${MenuHeight}px`,
 				},
-			}}
+			})}
 		>
 			<SimpleBar style={{ height: "100%" }}>
 				<Toolbar
@@ -41,7 +51,7 @@ export default function Sidenav() {
 						alignItems: "center",
 					}}
 				>
-					<PosturLogo
+					<CoachrLogo
 						fontSize="large"
 						sx={(theme) => ({
 							marginRight: theme.spacing(1),
@@ -50,11 +60,12 @@ export default function Sidenav() {
 					<Typography
 						variant="h5"
 						sx={(theme) => ({
+							fontFamily: " 'Orbitron', sans-serif",
 							fontWeight: "500",
 							paddingTop: theme.spacing(1),
 						})}
 					>
-						Postur
+						Coachr
 					</Typography>
 				</Toolbar>
 				<Divider />
@@ -76,6 +87,7 @@ export default function Sidenav() {
 								marginBlock: theme.spacing(1),
 								paddingBlock: theme.spacing(1),
 							})}
+							selected={location.pathname == to}
 						>
 							<ListItemIcon
 								sx={(theme) => ({

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Grid, Paper } from "@mui/material";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 
 import type { ISidenavItemProps } from "../types/pages";
@@ -14,6 +14,20 @@ export function Dash() {
 	return (
 		<Box>
 			<PageHeader header="Dashboard" />
+			<Grid container spacing={2}>
+				<Grid item xs={8}>
+					<Paper variant="outlined">xs=8</Paper>
+				</Grid>
+				<Grid item xs={4}>
+					<Paper variant="outlined">xs=4</Paper>
+				</Grid>
+				<Grid item xs={4}>
+					<Paper variant="outlined">xs=4</Paper>
+				</Grid>
+				<Grid item xs={8}>
+					<Paper variant="outlined">xs=8</Paper>
+				</Grid>
+			</Grid>
 		</Box>
 	);
 }

@@ -1949,6 +1949,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"coachr@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "coachr@workspace:."
+  dependencies:
+    "@emotion/react": ^11.7.1
+    "@emotion/styled": ^11.6.0
+    "@fontsource/fira-sans": ^4.5.0
+    "@fontsource/roboto": ^4.5.1
+    "@mui/icons-material": ^5.3.0
+    "@mui/material": ^5.3.0
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    "@types/webpack-env": ^1.16.3
+    css-loader: ^6.5.1
+    electron: ^16.0.7
+    electron-builder: ^22.14.5
+    html-webpack-plugin: ^5.5.0
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-router-dom: ^6.2.1
+    simplebar-react: ^2.3.6
+    style-loader: ^3.3.1
+    ts-loader: ^9.2.6
+    typescript: ^4.5.4
+    webpack: ^5.66.0
+    webpack-cli: ^4.9.1
+    webpack-dev-server: ^4.7.3
+  languageName: unknown
+  linkType: soft
+
 "color-convert@npm:^1.9.0":
   version: 1.9.3
   resolution: "color-convert@npm:1.9.3"
@@ -5099,36 +5129,6 @@ __metadata:
   checksum: b78abdd89c10f7b48f4bdcd376104a19d6e9c7495ab521729bdb3df315af6c211360e9f06887ad3bc0ab0f61a04b91d68ea11462997c79cced58b9ccd66fac07
   languageName: node
   linkType: hard
-
-"postur@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "postur@workspace:."
-  dependencies:
-    "@emotion/react": ^11.7.1
-    "@emotion/styled": ^11.6.0
-    "@fontsource/fira-sans": ^4.5.0
-    "@fontsource/roboto": ^4.5.1
-    "@mui/icons-material": ^5.3.0
-    "@mui/material": ^5.3.0
-    "@types/react": ^17.0.38
-    "@types/react-dom": ^17.0.11
-    "@types/webpack-env": ^1.16.3
-    css-loader: ^6.5.1
-    electron: ^16.0.7
-    electron-builder: ^22.14.5
-    html-webpack-plugin: ^5.5.0
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-router-dom: ^6.2.1
-    simplebar-react: ^2.3.6
-    style-loader: ^3.3.1
-    ts-loader: ^9.2.6
-    typescript: ^4.5.4
-    webpack: ^5.66.0
-    webpack-cli: ^4.9.1
-    webpack-dev-server: ^4.7.3
-  languageName: unknown
-  linkType: soft
 
 "prepend-http@npm:^2.0.0":
   version: 2.0.0

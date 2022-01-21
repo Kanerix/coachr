@@ -1,4 +1,11 @@
-import { AppBar, Box, IconButton, Toolbar, useTheme } from "@mui/material";
+import {
+	AppBar,
+	Box,
+	IconButton,
+	Toolbar,
+	useTheme,
+	Tooltip,
+} from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { drawerWidth } from "./Sidenav";
@@ -16,25 +23,30 @@ export default function Topnav() {
 				sx={(theme) => ({
 					width: `calc(100% - ${drawerWidth}px)`,
 					marginLeft: `${drawerWidth}px`,
-					background: theme.palette.background.default,
+					background: theme.palette.background.paper,
 					borderBottom: `solid 1px ${theme.palette.divider}`,
 				})}
 			>
 				<Toolbar>
 					<Box sx={{ flex: 1 }} />
-					<IconButton
-						onClick={() =>
-							setColorMode(
-								theme.palette.mode === "dark" ? "light" : "dark"
-							)
-						}
-					>
-						{theme.palette.mode === "dark" ? (
-							<Brightness4Icon />
-						) : (
-							<Brightness7Icon />
-						)}
-					</IconButton>
+
+					<Tooltip title="Themes" arrow>
+						<IconButton
+							onClick={() =>
+								setColorMode(
+									theme.palette.mode === "dark"
+										? "light"
+										: "dark"
+								)
+							}
+						>
+							{theme.palette.mode === "dark" ? (
+								<Brightness4Icon />
+							) : (
+								<Brightness7Icon />
+							)}
+						</IconButton>
+					</Tooltip>
 				</Toolbar>
 			</AppBar>
 		</Box>
