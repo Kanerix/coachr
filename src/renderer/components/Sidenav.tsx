@@ -20,7 +20,7 @@ import { AchievementsSidenavProps } from "../pages/Achievments";
 import { RemindersSidenavProps } from "../pages/Reminders";
 import { MenuHeight } from "./Menu";
 
-export const drawerWidth = 200;
+export const DrawerWidth = 200;
 
 export default function Sidenav() {
 	const location = useLocation();
@@ -37,10 +37,11 @@ export default function Sidenav() {
 		<Drawer
 			variant="persistent"
 			open={true}
-			sx={(_) => ({
+			sx={(theme) => ({
 				"& .MuiDrawer-paper": {
-					width: `${drawerWidth}px`,
+					width: `${DrawerWidth}px`,
 					marginTop: `${MenuHeight}px`,
+					borderTop: `solid 1px ${theme.palette.divider}`,
 				},
 			})}
 		>

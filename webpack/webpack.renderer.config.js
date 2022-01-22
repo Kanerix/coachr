@@ -8,6 +8,7 @@ module.exports = {
 	devtool: "inline-source-map",
 	devServer: {
 		static: resolve(process.cwd(), "public", "index.html"),
+		hot: true,
 	},
 	output: {
 		filename: "renderer.js",

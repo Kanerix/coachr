@@ -6,7 +6,7 @@ import { HashRouter, Route, Routes } from "react-router-dom";
 
 import Menu from "./components/Menu";
 import Topnav from "./components/Topnav";
-import Sidenav, { drawerWidth } from "./components/Sidenav";
+import Sidenav, { DrawerWidth } from "./components/Sidenav";
 import { CustomThemeProvider } from "./context/ColorModeContext";
 import { Dash } from "./pages/Dash";
 import { Home } from "./pages/Home";
@@ -15,11 +15,6 @@ import { Achievements } from "./pages/Achievments";
 import { Reminders } from "./pages/Reminders";
 
 export default function App() {
-	/*const notify = () => {
-		// @ts-ignore
-		electron.notificationApi.notify("Toggle theme");
-	};*/
-
 	return (
 		<CustomThemeProvider>
 			<HashRouter>
@@ -29,7 +24,7 @@ export default function App() {
 				<Sidenav />
 				<Box
 					sx={(theme) => ({
-						marginLeft: `${drawerWidth}px`,
+						marginLeft: `${DrawerWidth}px`,
 						padding: theme.spacing(2),
 					})}
 				>

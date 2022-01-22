@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import { drawerWidth } from "./Sidenav";
+
+import { DrawerWidth } from "./Sidenav";
 import { useColorMode } from "../context/ColorModeContext";
 
 export default function Topnav() {
@@ -18,13 +19,13 @@ export default function Topnav() {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar
-				position="static"
 				elevation={0}
+				position="relative"
 				sx={(theme) => ({
-					width: `calc(100% - ${drawerWidth}px)`,
-					marginLeft: `${drawerWidth}px`,
+					width: `calc(100% - ${DrawerWidth}px)`,
+					marginLeft: `${DrawerWidth}px`,
 					background: theme.palette.background.paper,
-					borderBottom: `solid 1px ${theme.palette.divider}`,
+					borderBlock: `solid 1px ${theme.palette.divider}`,
 				})}
 			>
 				<Toolbar>

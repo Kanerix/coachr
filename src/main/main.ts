@@ -1,18 +1,5 @@
-import { app, BrowserWindow, ipcMain, Notification } from "electron";
-import { join } from "path";
-
-function createWindow() {
-	const win = new BrowserWindow({
-		width: 1000,
-		height: 750,
-		autoHideMenuBar: true,
-		webPreferences: {
-			preload: join(process.cwd(), "dist", "preload.js"),
-		},
-	});
-
-	win.loadFile(join(process.cwd(), "dist", "index.html"));
-}
+import { app, BrowserWindow, ipcMain } from "electron";
+import createWindow from "./window";
 
 app.whenReady().then(() => {
 	createWindow();
@@ -30,6 +17,33 @@ app.on("window-all-closed", () => {
 	}
 });
 
-ipcMain.on("notify", (_, message: string) => {
-	new Notification({ title: "Notification", body: message }).show();
+// Title menu api
+
+ipcMain.on("title-menu-close", () => {
+	app.quit();
+});
+
+ipcMain.on("title-menu-maximize", () => {
+	const window = BrowserWindow.getFocusedWindow();
+
+	if (!window) {
+		return;
+	}
+
+	if (!window.isMaximized() && window.isMaximizable()) {
+		window.maximize();
+		return;
+	}
+
+	window.restore();
+});
+
+ipcMain.on("title-menu-minimize", () => {
+	const window = BrowserWindow.getFocusedWindow();
+
+	if (!window) {
+		return;
+	} else if (window.isMinimizable()) {
+		window.minimize();
+	}
 });
