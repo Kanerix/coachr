@@ -7,35 +7,24 @@ import {
 	Divider,
 	ListItemButton,
 	Typography,
-} from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
-import SimpleBar from "simplebar-react";
+} from "@mui/material"
+import { Link, useLocation } from "react-router-dom"
+import SimpleBar from "simplebar-react"
 
-import type { ISidenavItemProps } from "../types/pages";
-import { DashSidenavProps } from "../pages/Dash";
-import { HomeSidenavProps } from "../pages/Home";
-import CoachrLogo from "../assets/CoachrLogo";
-import { GoalsSidenavProps } from "../pages/Goals";
-import { AchievementsSidenavProps } from "../pages/Achievments";
-import { RemindersSidenavProps } from "../pages/Reminders";
-import { MenuHeight } from "./Menu";
+import CoachrLogo from "../assets/CoachrLogo"
+import pages from "../pages/_app"
+import { MenuHeight } from "./TitleMenu"
 
-export const DrawerWidth = 200;
+export const DrawerWidth = 200
 
 export default function Sidenav() {
-	const location = useLocation();
+	const location = useLocation()
 
-	const SidenavItems: ISidenavItemProps[] = [
-		HomeSidenavProps,
-		DashSidenavProps,
-		GoalsSidenavProps,
-		AchievementsSidenavProps,
-		RemindersSidenavProps,
-	];
+	const ListItemsArray = pages.filter((page) => page.nav)
 
 	return (
 		<Drawer
-			variant="persistent"
+			variant="permanent"
 			open={true}
 			sx={(theme) => ({
 				"& .MuiDrawer-paper": {
@@ -61,9 +50,9 @@ export default function Sidenav() {
 					<Typography
 						variant="h5"
 						sx={(theme) => ({
-							fontFamily: " 'Orbitron', sans-serif",
+							fontFamily: "Palanquin Dark",
 							fontWeight: "500",
-							paddingTop: theme.spacing(1),
+							paddingTop: theme.spacing(0.3),
 						})}
 					>
 						Coachr
@@ -78,21 +67,29 @@ export default function Sidenav() {
 						)} calc(${theme.spacing(1)} + 7px)`,
 					})}
 				>
-					{SidenavItems.map(({ name, to, Icon }) => (
+					{ListItemsArray.map(({ name, Icon, path }) => (
 						<ListItemButton
 							key={name}
 							component={Link}
-							to={to}
+							to={path}
 							sx={(theme) => ({
 								borderRadius: theme.shape.borderRadius,
 								marginBlock: theme.spacing(1),
 								paddingBlock: theme.spacing(1),
+								color:
+									location.pathname == path
+										? theme.palette.primary.main
+										: theme.palette.text.primary,
 							})}
-							selected={location.pathname == to}
+							selected={location.pathname == path}
 						>
 							<ListItemIcon
 								sx={(theme) => ({
 									minWidth: theme.spacing(5),
+									color:
+										location.pathname == path
+											? theme.palette.primary.main
+											: theme.palette.text.primary,
 								})}
 							>
 								<Icon />
@@ -103,5 +100,5 @@ export default function Sidenav() {
 				</List>
 			</SimpleBar>
 		</Drawer>
-	);
+	)
 }

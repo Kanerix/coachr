@@ -1,22 +1,22 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material"
 
-export const MenuHeight = 24;
+export const MenuHeight = 24
 
-export default function Menu() {
+export default function TitleMenu() {
 	const handleMinimize = () => {
 		// @ts-ignore
-		window.electron.titleMenuApi.minimize();
-	};
+		window.electron.titleMenuApi.minimize()
+	}
 
 	const handleMaximize = () => {
 		// @ts-ignore
-		window.electron.titleMenuApi.maximize();
-	};
+		window.electron.titleMenuApi.maximize()
+	}
 
 	const handleClose = () => {
 		// @ts-ignore
-		window.electron.titleMenuApi.close();
-	};
+		window.electron.titleMenuApi.close()
+	}
 
 	return (
 		<Box
@@ -28,15 +28,17 @@ export default function Menu() {
 				alignItems: "center",
 				maxHeight: `${MenuHeight}px`,
 				WebkitAppRegion: "drag",
+				paddingInline: "4px",
 			}}
 		>
 			<Typography
 				sx={(theme) => ({
-					padding: "8px",
+					paddingBlock: "8px",
 					fontSize: "14px",
 					fontWeight: 500,
 					flex: 1,
 					color: theme.palette.text.disabled,
+					overflow: "hidden",
 				})}
 			>
 				Coachr
@@ -80,8 +82,7 @@ export default function Menu() {
 					width: `calc(${MenuHeight}px - 10px)`,
 					border: `solid 1px ${theme.palette.divider}`,
 					borderRadius: "100%",
-					marginLeft: "4px",
-					marginRight: "8px",
+					marginInline: "4px",
 					WebkitAppRegion: "no-drag",
 					":hover": {
 						background: theme.palette.error.light,
@@ -91,5 +92,5 @@ export default function Menu() {
 				onClick={handleClose}
 			/>
 		</Box>
-	);
+	)
 }

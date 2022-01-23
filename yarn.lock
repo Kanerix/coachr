@@ -288,6 +288,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/palanquin-dark@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "@fontsource/palanquin-dark@npm:4.5.0"
+  checksum: 4a6e152403d5edb49076897c4008aae28fe2384136cbf5cf5b156d8a924c25ef752fca5dfa537cf20bb06dbd374f292c47f9a112af7c915e5ef4884a6fff9378
+  languageName: node
+  linkType: hard
+
 "@fontsource/roboto@npm:^4.5.1":
   version: 4.5.1
   resolution: "@fontsource/roboto@npm:4.5.1"
@@ -1152,6 +1159,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: e2d23d40494565dfed4acd65e478570c444db5ac6c053551ed429c39ea0f2c99d83df63e7befec936df601827d2254d06a2fb6f7dcfd2022e810b25eab818b8c
+  languageName: node
+  linkType: hard
+
 "agent-base@npm:6, agent-base@npm:^6.0.2":
   version: 6.0.2
   resolution: "agent-base@npm:6.0.2"
@@ -1956,12 +1970,14 @@ __metadata:
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
     "@fontsource/fira-sans": ^4.5.0
+    "@fontsource/palanquin-dark": ^4.5.0
     "@fontsource/roboto": ^4.5.1
     "@mui/icons-material": ^5.3.0
     "@mui/material": ^5.3.0
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
     "@types/webpack-env": ^1.16.3
+    add: ^2.0.6
     css-loader: ^6.5.1
     electron: ^16.0.7
     electron-builder: ^22.14.5
@@ -1976,6 +1992,7 @@ __metadata:
     webpack: ^5.66.0
     webpack-cli: ^4.9.1
     webpack-dev-server: ^4.7.3
+    yarn: ^1.22.17
   languageName: unknown
   linkType: soft
 
@@ -6842,6 +6859,16 @@ __metadata:
     y18n: ^5.0.5
     yargs-parser: ^21.0.0
   checksum: 64fc2e32c56739f1d14d2d24acd17a6944c3c8e3e3558f09fc1953ac112e868cc16013d282886b9d5be22187f8b9ed4f60741a6b1011f595ce2718805a656852
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.17":
+  version: 1.22.17
+  resolution: "yarn@npm:1.22.17"
+  bin:
+    yarn: ./bin/yarn.js
+    yarnpkg: ./bin/yarn.js
+  checksum: 9d5211477d439a4d7b5632d7c290a3be36d2edc13599b64964bff520d3a3a480db85010f3262293981abb4e618ac92aaafa4c4c54bae50a7713c7b8ec431adac
   languageName: node
   linkType: hard
 

@@ -1,25 +1,22 @@
-import "@fontsource/fira-sans";
-import "@fontsource/roboto";
-import "simplebar/dist/simplebar.min.css";
-import { Box, CssBaseline } from "@mui/material";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import "@fontsource/fira-sans"
+import "@fontsource/palanquin-dark"
+import "simplebar/dist/simplebar.min.css"
 
-import Menu from "./components/Menu";
-import Topnav from "./components/Topnav";
-import Sidenav, { DrawerWidth } from "./components/Sidenav";
-import { CustomThemeProvider } from "./context/ColorModeContext";
-import { Dash } from "./pages/Dash";
-import { Home } from "./pages/Home";
-import { Goals } from "./pages/Goals";
-import { Achievements } from "./pages/Achievments";
-import { Reminders } from "./pages/Reminders";
+import { Box, CssBaseline } from "@mui/material"
+import { HashRouter, Route, Routes } from "react-router-dom"
+
+import TitleMenu from "./components/TitleMenu"
+import Topnav from "./components/Topnav"
+import Sidenav, { DrawerWidth } from "./components/Sidenav"
+import { CustomThemeProvider } from "./context/ColorModeContext"
+import pages from "./pages/_app"
 
 export default function App() {
 	return (
 		<CustomThemeProvider>
 			<HashRouter>
 				<CssBaseline />
-				<Menu />
+				<TitleMenu />
 				<Topnav />
 				<Sidenav />
 				<Box
@@ -29,17 +26,16 @@ export default function App() {
 					})}
 				>
 					<Routes>
-						<Route path="/" element={<Home />} />
-						<Route path="/dash" element={<Dash />} />
-						<Route path="/goals" element={<Goals />} />
-						<Route
-							path="/achievements"
-							element={<Achievements />}
-						/>
-						<Route path="/reminders" element={<Reminders />} />
+						{pages.map(({ path, component }, index) => (
+							<Route
+								key={index}
+								path={path}
+								element={component}
+							/>
+						))}
 					</Routes>
 				</Box>
 			</HashRouter>
 		</CustomThemeProvider>
-	);
+	)
 }

@@ -1,9 +1,13 @@
-import type HomeIcon from "@mui/icons-material/Home";
+import type { SvgIconTypeMap } from "@mui/material"
+import type { OverridableComponent } from "@mui/material/OverridableComponent"
+import type { ReactNode } from "react"
 
-export interface ISidenavCategoryProp {}
-
-export interface ISidenavItemProps {
-	name: string;
-	Icon: typeof HomeIcon;
-	to: string;
+export interface PageProps {
+	name: string
+	component: ReactNode
+	Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+		muiName: string
+	}
+	path: string
+	nav: boolean
 }
