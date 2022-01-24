@@ -1,8 +1,8 @@
 import {
-	CalendarToday,
-	Dashboard,
-	EmojiEvents,
-	Flag,
+	CalendarTodayRounded,
+	DashboardRounded,
+	EmojiEventsRounded,
+	FlagRounded,
 } from "@mui/icons-material"
 
 import type { PageProps } from "../types/pages"
@@ -15,28 +15,28 @@ const pages: PageProps[] = [
 	{
 		name: "Dash",
 		component: Dash(),
-		Icon: Dashboard,
+		Icon: DashboardRounded,
 		path: "/",
 		nav: true,
 	},
 	{
 		name: "Goals",
 		component: Goals(),
-		Icon: Flag,
+		Icon: FlagRounded,
 		path: "/goal",
 		nav: true,
 	},
 	{
 		name: "Achievements",
 		component: Achievements(),
-		Icon: EmojiEvents,
+		Icon: EmojiEventsRounded,
 		path: "/achievments",
 		nav: true,
 	},
 	{
 		name: "Reminders",
 		component: Reminders(),
-		Icon: CalendarToday,
+		Icon: CalendarTodayRounded,
 		path: "/reminders",
 		nav: true,
 	},

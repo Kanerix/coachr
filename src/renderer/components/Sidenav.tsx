@@ -67,36 +67,49 @@ export default function Sidenav() {
 						)} calc(${theme.spacing(1)} + 7px)`,
 					})}
 				>
-					{ListItemsArray.map(({ name, Icon, path }) => (
-						<ListItemButton
-							key={name}
-							component={Link}
-							to={path}
-							sx={(theme) => ({
-								borderRadius: theme.shape.borderRadius,
-								marginBlock: theme.spacing(1),
-								paddingBlock: theme.spacing(1),
-								color:
-									location.pathname == path
-										? theme.palette.primary.main
-										: theme.palette.text.primary,
-							})}
-							selected={location.pathname == path}
-						>
-							<ListItemIcon
+					{ListItemsArray.map(({ name, Icon, path }) => {
+						const selected = location.pathname === path
+
+						return (
+							<ListItemButton
+								key={name}
+								component={Link}
+								to={path}
 								sx={(theme) => ({
-									minWidth: theme.spacing(5),
-									color:
-										location.pathname == path
-											? theme.palette.primary.main
-											: theme.palette.text.primary,
+									borderRadius: theme.shape.borderRadius,
+									marginBlock: theme.spacing(1),
+									paddingBlock: theme.spacing(1),
+									"&.Mui-selected": {
+										background: theme.palette.divider,
+									},
+									"&.Mui-selected:hover": {
+										background: theme.palette.divider,
+									},
 								})}
+								selected={selected}
 							>
-								<Icon />
-							</ListItemIcon>
-							<ListItemText primary={name} />
-						</ListItemButton>
-					))}
+								<ListItemIcon
+									sx={(theme) => ({
+										minWidth: theme.spacing(5),
+									})}
+								>
+									<Icon
+										color={
+											selected ? "secondary" : "inherit"
+										}
+									/>
+								</ListItemIcon>
+								<ListItemText
+									sx={(theme) => ({
+										color: selected
+											? theme.palette.secondary.main
+											: theme.palette.text.primary,
+									})}
+									primary={name}
+								/>
+							</ListItemButton>
+						)
+					})}
 				</List>
 			</SimpleBar>
 		</Drawer>

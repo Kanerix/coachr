@@ -1,5 +1,5 @@
-import { createTheme, ThemeOptions } from "@mui/material";
-import BaseTheme from "./_base";
+import { createTheme, ThemeOptions } from "@mui/material"
+import { BaseTheme } from "./base"
 
 const lightTheme: ThemeOptions = createTheme({
 	...BaseTheme,
@@ -10,6 +10,6 @@ const lightTheme: ThemeOptions = createTheme({
 			default: "#f4f4f4",
 		},
 	},
-});
+})
 
-export default lightTheme;
+export default lightTheme
