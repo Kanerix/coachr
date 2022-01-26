@@ -52,7 +52,7 @@ export default function Sidenav() {
 						sx={(theme) => ({
 							fontFamily: "Palanquin Dark",
 							fontWeight: "500",
-							paddingTop: theme.spacing(0.3),
+							paddingTop: theme.spacing(0.5),
 						})}
 					>
 						Coachr
@@ -62,9 +62,7 @@ export default function Sidenav() {
 				<List
 					disablePadding={true}
 					sx={(theme) => ({
-						paddingInline: `${theme.spacing(
-							1
-						)} calc(${theme.spacing(1)} + 7px)`,
+						paddingInline: theme.spacing(1),
 					})}
 				>
 					{ListItemsArray.map(({ name, Icon, path }) => {
@@ -78,13 +76,7 @@ export default function Sidenav() {
 								sx={(theme) => ({
 									borderRadius: theme.shape.borderRadius,
 									marginBlock: theme.spacing(1),
-									paddingBlock: theme.spacing(1),
-									"&.Mui-selected": {
-										background: theme.palette.divider,
-									},
-									"&.Mui-selected:hover": {
-										background: theme.palette.divider,
-									},
+									paddingBlock: theme.spacing(1)
 								})}
 								selected={selected}
 							>

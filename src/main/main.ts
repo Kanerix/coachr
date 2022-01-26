@@ -17,8 +17,6 @@ app.on("window-all-closed", () => {
 	}
 });
 
-// Title menu api
-
 ipcMain.on("title-menu-close", () => {
 	app.quit();
 });
