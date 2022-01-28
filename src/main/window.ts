@@ -1,5 +1,5 @@
-import { BrowserWindow } from "electron";
-import { join } from "path";
+import { BrowserWindow } from 'electron'
+import { join } from 'path'
 
 export default function createWindow() {
 	const mainWindow = new BrowserWindow({
@@ -7,11 +7,11 @@ export default function createWindow() {
 		height: 750,
 		frame: false,
 		webPreferences: {
-			preload: join(process.cwd(), "dist", "preload.js"),
+			preload: join(process.cwd(), 'dist', 'preload.js'),
 		},
-	});
+	})
 
-	mainWindow.loadFile(join(process.cwd(), "dist", "index.html"));
+	mainWindow.loadFile(join(process.cwd(), 'dist', 'index.html'))
 
-	return mainWindow;
+	return mainWindow
 }

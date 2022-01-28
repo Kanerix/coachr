@@ -1,7 +1,7 @@
-import { Box, Grid, Paper, styled } from "@mui/material"
-import ReactApexChart from "react-apexcharts"
+import { Box, Grid, Paper, styled } from '@mui/material'
+import ReactApexChart from 'react-apexcharts'
 
-import PageHeader from "../components/PageHeader"
+import PageHeader from '../components/PageHeader'
 
 const Item = styled(Paper)(({ theme }) => ({
 	padding: theme.spacing(2),
@@ -18,9 +18,9 @@ export default function Dash() {
 							options={{
 								chart: {
 									width: 380,
-									type: "donut",
+									type: 'donut',
 								},
-								labels: ["Comedy"],
+								labels: ['Comedy'],
 								legend: {
 									show: false,
 								},
@@ -30,7 +30,7 @@ export default function Dash() {
 								states: {
 									active: {
 										filter: {
-											type: "none",
+											type: 'none',
 											value: 0.0,
 										},
 									},

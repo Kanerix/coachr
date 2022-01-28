@@ -1,13 +1,13 @@
-import { createTheme, ThemeOptions } from "@mui/material"
-import { BaseTheme } from "./base"
+import { createTheme, ThemeOptions } from '@mui/material'
+import { BaseTheme } from './base'
 
 const lightTheme: ThemeOptions = createTheme({
 	...BaseTheme,
 	palette: {
-		mode: "light",
+		mode: 'light',
 		background: {
-			paper: "#ffffff",
-			default: "#f4f4f4",
+			paper: '#ffffff',
+			default: '#f4f4f4',
 		},
 	},
 })

@@ -1,6 +1,6 @@
-import { Theme, ThemeProvider } from "@mui/material"
-import { createContext, ReactNode, useContext, useMemo, useState } from "react"
-import { IThemes, getMode } from "../themes/_theme"
+import { Theme, ThemeProvider } from '@mui/material'
+import { createContext, ReactNode, useContext, useMemo, useState } from 'react'
+import { IThemes, getMode } from '../themes/_theme'
 
 export interface IColorModeContext {
 	setColorMode: (newTheme: IThemes) => void
@@ -13,7 +13,7 @@ export function useColorMode() {
 
 	if (context == undefined) {
 		throw new Error(
-			"useColorMode must be used inside a CustomThemeProvider"
+			'useColorMode must be used inside a CustomThemeProvider'
 		)
 	}
 
@@ -25,7 +25,7 @@ interface IColorModeProviderProps {
 }
 
 export function CustomThemeProvider({ children }: IColorModeProviderProps) {
-	const [mode, setMode] = useState<IThemes>("dark")
+	const [mode, setMode] = useState<IThemes>('dark')
 	const colorMode = useMemo<IColorModeContext>(
 		() => ({
 			setColorMode: (newTheme: IThemes) => setMode(newTheme),
