@@ -7,7 +7,17 @@ const lightTheme: ThemeOptions = createTheme({
 		mode: 'light',
 		background: {
 			paper: '#ffffff',
-			default: '#f4f4f4',
+			default: '#e3f2fd',
+		},
+		primary: {
+			light: '#e3f2fd',
+			main: '#2196f3',
+			dark: '#1e88e5',
+		},
+		secondary: {
+			light: '#ede7f6',
+			main: '#673ab7',
+			dark: '#5e35b1',
 		},
 	},
 })
