@@ -12,10 +12,10 @@ export const BaseTheme: ThemeOptions = {
 			styleOverrides: {
 				root: sx(( theme: Theme ) => ({
 					'&.Mui-selected .MuiListItemIcon-root': {
-						color: theme.palette.secondary.main,
+						color: theme.palette.primary.main,
 					},
 					'&.Mui-selected .MuiListItemText-primary': {
-						color: theme.palette.secondary.main,
+						color: theme.palette.primary.main,
 					}
 				})),
 			}
