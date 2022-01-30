@@ -1,43 +1,42 @@
-import {
-	CalendarTodayRounded,
-	DashboardRounded,
-	EmojiEventsRounded,
-	FlagRounded,
-} from "@mui/icons-material"
+import { faBullseye, faClock, faDashboard, faTrophy } from '@fortawesome/free-solid-svg-icons'
 
-import type { PageProps } from "../types/pages"
-import Achievements from "./Achievments"
-import Dash from "./Dash"
-import Goals from "./Goals"
-import Reminders from "./Reminders"
+import type { PageProps } from '../types/pages'
+import Achievements from './Achievments'
+import Dash from './Dash'
+import Goals from './Goals'
+import Reminders from './Reminders'
 
 const pages: PageProps[] = [
 	{
+<<<<<<< HEAD
 		name: "Dashboard",
+=======
+		name: 'Dash',
+>>>>>>> master
 		component: Dash(),
-		Icon: DashboardRounded,
-		path: "/",
+		icon: faDashboard,
+		path: '/',
 		nav: true,
 	},
 	{
-		name: "Goals",
+		name: 'Goals',
 		component: Goals(),
-		Icon: FlagRounded,
-		path: "/goal",
+		icon: faBullseye,
+		path: '/goal',
 		nav: true,
 	},
 	{
-		name: "Achievements",
+		name: 'Achievements',
 		component: Achievements(),
-		Icon: EmojiEventsRounded,
-		path: "/achievments",
+		icon: faTrophy,
+		path: '/achievments',
 		nav: true,
 	},
 	{
-		name: "Reminders",
+		name: 'Reminders',
 		component: Reminders(),
-		Icon: CalendarTodayRounded,
-		path: "/reminders",
+		icon: faClock,
+		path: '/reminders',
 		nav: true,
 	},
 ]

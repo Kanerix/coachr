@@ -1,96 +1,85 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useTheme } from '@mui/material'
 
-export const MenuHeight = 24
+export const titleMenuHeight = 24
 
 export default function TitleMenu() {
+	const theme = useTheme()
+
 	const handleMinimize = () => {
-		// @ts-ignore
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		//@ts-ignore
 		window.electron.titleMenuApi.minimize()
 	}
 
 	const handleMaximize = () => {
-		// @ts-ignore
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		//@ts-ignore
 		window.electron.titleMenuApi.maximize()
 	}
 
 	const handleClose = () => {
-		// @ts-ignore
+		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+		//@ts-ignore
 		window.electron.titleMenuApi.close()
 	}
+
+	const colors: { 
+		main: string, 
+		dark: string, 
+		onClick: () => void
+	}[] = [
+		{
+			main: theme.palette.success.main,
+			dark: theme.palette.success.dark,
+			onClick: handleMinimize,
+		},
+		{
+			main: theme.palette.warning.main,
+			dark: theme.palette.warning.dark,
+			onClick: handleMaximize,
+		},
+		{
+			main: theme.palette.error.main,
+			dark: theme.palette.error.dark,
+			onClick: handleClose,
+		}
+	]
 
 	return (
 		<Box
 			sx={{
-				display: "flex",
-				flexGrow: 1,
-				flexDirection: "row",
-				justifyContent: "center",
-				alignItems: "center",
-				maxHeight: `${MenuHeight}px`,
-				WebkitAppRegion: "drag",
-				paddingInline: "4px",
+				display: 'flex',
+				flexDirection: 'row',
+				alignItems: 'center',
+				px: 1,
+				WebkitAppRegion: 'drag',
 			}}
 		>
 			<Typography
-				sx={(theme) => ({
-					paddingBlock: "8px",
-					fontSize: "14px",
-					fontWeight: 500,
-					flex: 1,
-					color: theme.palette.text.disabled,
-					overflow: "hidden",
-				})}
+				sx={{
+					flexGrow: 1,
+				}}
 			>
 				Coachr
 			</Typography>
-			<Box
-				sx={(theme) => ({
-					background: theme.palette.success.main,
-					height: `calc(${MenuHeight}px - 10px)`,
-					width: `calc(${MenuHeight}px - 10px)`,
-					border: `solid 1px ${theme.palette.divider}`,
-					borderRadius: "100%",
-					marginInline: "4px",
-					WebkitAppRegion: "no-drag",
-					":hover": {
-						background: theme.palette.success.light,
-					},
-				})}
-				component={"button"}
-				onClick={handleMinimize}
-			/>
-			<Box
-				sx={(theme) => ({
-					background: theme.palette.warning.main,
-					height: `calc(${MenuHeight}px - 10px)`,
-					width: `calc(${MenuHeight}px - 10px)`,
-					border: `solid 1px ${theme.palette.divider}`,
-					borderRadius: "100%",
-					marginInline: "4px",
-					WebkitAppRegion: "no-drag",
-					":hover": {
-						background: theme.palette.warning.light,
-					},
-				})}
-				component={"button"}
-				onClick={handleMaximize}
-			/>
-			<Box
-				sx={(theme) => ({
-					background: theme.palette.error.main,
-					height: `calc(${MenuHeight}px - 10px)`,
-					width: `calc(${MenuHeight}px - 10px)`,
-					border: `solid 1px ${theme.palette.divider}`,
-					borderRadius: "100%",
-					marginInline: "4px",
-					WebkitAppRegion: "no-drag",
-					":hover": {
-						background: theme.palette.error.light,
-					},
-				})}
-				component={"button"}
-				onClick={handleClose}
-			/>
+			{colors.map(({main, dark, onClick}, idx) => (
+				<Box
+					key={idx}
+					sx={(theme) => ({
+						borderRadius: '100%',
+						backgroundColor: main,
+						WebkitAppRegion: 'no-drag',
+						border: `solid 1px ${theme.palette.divider}`,
+						width: titleMenuHeight/2,
+						height: titleMenuHeight/2,
+						ml: 1,
+						':hover': {
+							backgroundColor: dark,
+						}
+					})}
+					onClick={onClick}
+				/>
+			))}
 		</Box>
 	)
 }

@@ -1,49 +1,47 @@
-import { app, BrowserWindow, ipcMain } from "electron";
-import createWindow from "./window";
+import { app, BrowserWindow, ipcMain } from 'electron'
+import createWindow from './window'
 
 app.whenReady().then(() => {
-	createWindow();
+	createWindow()
 
-	app.on("activate", () => {
+	app.on('activate', () => {
 		if (BrowserWindow.getAllWindows().length === 0) {
-			createWindow();
+			createWindow()
 		}
-	});
-});
+	})
+})
 
-app.on("window-all-closed", () => {
-	if (process.platform !== "darwin") {
-		app.quit();
+app.on('window-all-closed', () => {
+	if (process.platform !== 'darwin') {
+		app.quit()
 	}
-});
+})
 
-// Title menu api
+ipcMain.on('title-menu-close', () => {
+	app.quit()
+})
 
-ipcMain.on("title-menu-close", () => {
-	app.quit();
-});
-
-ipcMain.on("title-menu-maximize", () => {
-	const window = BrowserWindow.getFocusedWindow();
+ipcMain.on('title-menu-maximize', () => {
+	const window = BrowserWindow.getFocusedWindow()
 
 	if (!window) {
-		return;
+		return
 	}
 
 	if (!window.isMaximized() && window.isMaximizable()) {
-		window.maximize();
-		return;
+		window.maximize()
+		return
 	}
 
-	window.restore();
-});
+	window.restore()
+})
 
-ipcMain.on("title-menu-minimize", () => {
-	const window = BrowserWindow.getFocusedWindow();
+ipcMain.on('title-menu-minimize', () => {
+	const window = BrowserWindow.getFocusedWindow()
 
 	if (!window) {
-		return;
+		return
 	} else if (window.isMinimizable()) {
-		window.minimize();
+		window.minimize()
 	}
-});
+})

@@ -1,15 +1,21 @@
+<<<<<<< HEAD
 import "@fontsource/poppins"
 import "@fontsource/palanquin-dark"
 import "simplebar/dist/simplebar.min.css"
+=======
+import '@fontsource/fira-sans'
+import '@fontsource/palanquin-dark'
+import 'simplebar/dist/simplebar.min.css'
+>>>>>>> master
 
-import { Box, CssBaseline } from "@mui/material"
-import { HashRouter, Route, Routes } from "react-router-dom"
+import { Box, CssBaseline } from '@mui/material'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 
-import TitleMenu from "./components/TitleMenu"
-import Topnav from "./components/Topnav"
-import Sidenav, { DrawerWidth } from "./components/Sidenav"
-import { CustomThemeProvider } from "./context/ColorModeContext"
-import pages from "./pages/_app"
+import TitleMenu from './components/TitleMenu'
+import Topnav from './components/Topnav'
+import Sidenav, { drawerWidth } from './components/Sidenav'
+import { CustomThemeProvider } from './context/ColorModeContext'
+import pages from './pages/_app'
 
 export default function App() {
 	return (
@@ -21,8 +27,8 @@ export default function App() {
 				<Sidenav />
 				<Box
 					sx={(theme) => ({
-						marginLeft: `${DrawerWidth}px`,
-						padding: theme.spacing(2),
+						ml: `${drawerWidth}px`,
+						p: theme.spacing(2),
 					})}
 				>
 					<Routes>

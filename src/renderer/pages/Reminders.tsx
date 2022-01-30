@@ -1,6 +1,6 @@
-import { Box } from "@mui/material"
+import { Box } from '@mui/material'
 
-import PageHeader from "../components/PageHeader"
+import PageHeader from '../components/PageHeader'
 
 export default function Reminders() {
 	return (

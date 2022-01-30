@@ -1,13 +1,10 @@
-import type { SvgIconTypeMap } from "@mui/material"
-import type { OverridableComponent } from "@mui/material/OverridableComponent"
-import type { ReactNode } from "react"
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+import type { ReactNode } from 'react'
 
 export interface PageProps {
 	name: string
 	component: ReactNode
-	Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
-		muiName: string
-	}
+	icon: IconDefinition
 	path: string
 	nav: boolean
 }

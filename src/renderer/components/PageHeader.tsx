@@ -1,5 +1,5 @@
-import { Divider, Typography } from "@mui/material";
-import { Box } from "@mui/system";
+import { Divider, Typography } from '@mui/material'
+import { Box } from '@mui/system'
 
 interface IPageHeaderProps {
 	header: string;
@@ -22,5 +22,5 @@ export default function PageHeader({ header }: IPageHeaderProps) {
 			</Typography>
 			<Divider />
 		</Box>
-	);
+	)
 }
