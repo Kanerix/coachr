@@ -281,17 +281,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/fira-sans@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "@fontsource/fira-sans@npm:4.5.0"
-  checksum: 3baf6692acd55a4c454ff9fca1366e3b4f809cd6dd25e8ea75daa0e293f70b19074fa967443e944ea1da7dfcc53dc76f69d313898e0a7eb890324711a5a0b90c
-  languageName: node
-  linkType: hard
-
 "@fontsource/palanquin-dark@npm:^4.5.0":
   version: 4.5.0
   resolution: "@fontsource/palanquin-dark@npm:4.5.0"
   checksum: 4a6e152403d5edb49076897c4008aae28fe2384136cbf5cf5b156d8a924c25ef752fca5dfa537cf20bb06dbd374f292c47f9a112af7c915e5ef4884a6fff9378
+  languageName: node
+  linkType: hard
+
+"@fontsource/poppins@npm:^4.5.1":
+  version: 4.5.1
+  resolution: "@fontsource/poppins@npm:4.5.1"
+  checksum: a02a900c547c9f974a3cad7ea2e101fb2a9e0f5e3890d1dcd0fec873274076b084e7a629d8fee863b65d0a871aef3136d9f1502df1a3bf17fe06ec56f568f506
   languageName: node
   linkType: hard
 
@@ -1983,8 +1983,8 @@ __metadata:
   dependencies:
     "@emotion/react": ^11.7.1
     "@emotion/styled": ^11.6.0
-    "@fontsource/fira-sans": ^4.5.0
     "@fontsource/palanquin-dark": ^4.5.0
+    "@fontsource/poppins": ^4.5.1
     "@fontsource/roboto": ^4.5.1
     "@mui/icons-material": ^5.3.0
     "@mui/material": ^5.3.0

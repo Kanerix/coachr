@@ -15,7 +15,7 @@ import CoachrLogo from "../assets/CoachrLogo"
 import pages from "../pages/_app"
 import { MenuHeight } from "./TitleMenu"
 
-export const DrawerWidth = 200
+export const DrawerWidth = 240
 
 export default function Sidenav() {
 	const location = useLocation()
@@ -77,14 +77,7 @@ export default function Sidenav() {
 								to={path}
 								sx={(theme) => ({
 									borderRadius: theme.shape.borderRadius,
-									marginBlock: theme.spacing(1),
-									paddingBlock: theme.spacing(1),
-									"&.Mui-selected": {
-										background: theme.palette.divider,
-									},
-									"&.Mui-selected:hover": {
-										background: theme.palette.divider,
-									},
+									marginBlock: theme.spacing(0.5),
 								})}
 								selected={selected}
 							>
@@ -101,6 +94,7 @@ export default function Sidenav() {
 								</ListItemIcon>
 								<ListItemText
 									sx={(theme) => ({
+										fontWeight: 600,
 										color: selected
 											? theme.palette.secondary.main
 											: theme.palette.text.primary,

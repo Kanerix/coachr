@@ -13,7 +13,7 @@ import Reminders from "./Reminders"
 
 const pages: PageProps[] = [
 	{
-		name: "Dash",
+		name: "Dashboard",
 		component: Dash(),
 		Icon: DashboardRounded,
 		path: "/",

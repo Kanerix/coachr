@@ -6,18 +6,18 @@ const darkTheme: ThemeOptions = createTheme({
 	palette: {
 		mode: "dark",
 		background: {
-			paper: "#111827",
-			default: "#0b0f19",
+			paper: "#111936",
+			default: "#1a223f",
 		},
 		primary: {
-			dark: "#2f3eb1",
-			main: "#4655ce",
-			light: "#6e7ad8",
+			light: "#e3f2fd",
+			main: "#2196f3",
+			dark: "#1e88e5",
 		},
 		secondary: {
-			dark: "#0b815a",
-			main: "#10b981",
-			light: "#3fc79a",
+			light: "#d1c4e9",
+			main: "#7c4dff",
+			dark: "#651fff",
 		},
 	},
 })

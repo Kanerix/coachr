@@ -1,4 +1,4 @@
-import "@fontsource/fira-sans"
+import "@fontsource/poppins"
 import "@fontsource/palanquin-dark"
 import "simplebar/dist/simplebar.min.css"
 

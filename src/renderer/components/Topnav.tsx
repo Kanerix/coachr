@@ -25,6 +25,7 @@ export default function Topnav() {
 					width: `calc(100% - ${DrawerWidth}px)`,
 					marginLeft: `${DrawerWidth}px`,
 					background: theme.palette.background.paper,
+					border: 'none',
 					borderBlock: `solid 1px ${theme.palette.divider}`,
 				})}
 			>
