@@ -16,11 +16,7 @@ import CoachrLogo from '../assets/CoachrLogo'
 import pages from '../pages/_app'
 import { titleMenuHeight } from './TitleMenu'
 
-<<<<<<< HEAD
-export const DrawerWidth = 240
-=======
-export const drawerWidth = 200
->>>>>>> master
+export const drawerWidth = 240
 
 export default function Sidenav() {
 	const location = useLocation()
@@ -80,12 +76,7 @@ export default function Sidenav() {
 								to={path}
 								sx={(theme) => ({
 									borderRadius: theme.shape.borderRadius,
-<<<<<<< HEAD
 									marginBlock: theme.spacing(0.5),
-=======
-									my: 1,
-									py: 1
->>>>>>> master
 								})}
 								selected={selected}
 							>
@@ -96,7 +87,6 @@ export default function Sidenav() {
 								>
 									<FontAwesomeIcon icon={icon} />
 								</ListItemIcon>
-<<<<<<< HEAD
 								<ListItemText
 									sx={(theme) => ({
 										fontWeight: 600,
@@ -106,9 +96,6 @@ export default function Sidenav() {
 									})}
 									primary={name}
 								/>
-=======
-								<ListItemText primary={name} />
->>>>>>> master
 							</ListItemButton>
 						)
 					})}

@@ -1,12 +1,7 @@
-<<<<<<< HEAD
+import "@fontsource/roboto"
 import "@fontsource/poppins"
 import "@fontsource/palanquin-dark"
 import "simplebar/dist/simplebar.min.css"
-=======
-import '@fontsource/fira-sans'
-import '@fontsource/palanquin-dark'
-import 'simplebar/dist/simplebar.min.css'
->>>>>>> master
 
 import { Box, CssBaseline } from '@mui/material'
 import { HashRouter, Route, Routes } from 'react-router-dom'

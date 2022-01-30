@@ -1,15 +1,10 @@
-<<<<<<< HEAD
 import { experimental_sx, Theme, ThemeOptions } from "@mui/material"
-=======
-import { experimental_sx as sx, Theme, ThemeOptions } from '@mui/material'
->>>>>>> master
 
 export const BaseTheme: ThemeOptions = {
 	shape: {
 		borderRadius: 3,
 	},
 	typography: {
-<<<<<<< HEAD
 		fontFamily: "Poppins, Roboto",
 	},
 	components: {
@@ -24,26 +19,6 @@ export const BaseTheme: ThemeOptions = {
 			defaultProps: {
 				elevation: 0,
 				variant: "outlined",
-=======
-		fontFamily: 'Fira Sans, Roboto',
-	},
-	components: {
-		MuiListItemButton: {
-			styleOverrides: {
-				root: sx(( theme: Theme ) => ({
-					'&.Mui-selected .MuiListItemIcon-root': {
-						color: theme.palette.primary.main,
-					},
-					'&.Mui-selected .MuiListItemText-primary': {
-						color: theme.palette.primary.main,
-					}
-				})),
-			}
-		},
-		MuiPaper: {
-			defaultProps: {
-				variant: 'outlined',
->>>>>>> master
 			},
 		},
 		MuiCssBaseline: {

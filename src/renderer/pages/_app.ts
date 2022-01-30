@@ -8,11 +8,7 @@ import Reminders from './Reminders'
 
 const pages: PageProps[] = [
 	{
-<<<<<<< HEAD
 		name: "Dashboard",
-=======
-		name: 'Dash',
->>>>>>> master
 		component: Dash(),
 		icon: faDashboard,
 		path: '/',
