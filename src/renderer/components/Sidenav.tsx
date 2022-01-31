@@ -1,18 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-	Toolbar,
 	List,
 	ListItemIcon,
 	ListItemText,
 	Drawer,
 	Divider,
 	ListItemButton,
+	Paper,
+	Avatar,
 	Typography,
+	IconButton,
 } from '@mui/material'
+import { Box } from '@mui/system'
 import { Link, useLocation } from 'react-router-dom'
 import SimpleBar from 'simplebar-react'
 
-import CoachrLogo from '../assets/CoachrLogo'
 import pages from '../pages/_app'
 import { titleMenuHeight } from './TitleMenu'
 
@@ -36,34 +38,52 @@ export default function Sidenav() {
 			})}
 		>
 			<SimpleBar style={{ height: '100%' }}>
-				<Toolbar
-					sx={{
-						justifyContent: 'center',
+				<Paper
+					sx={(theme) => ({
+						background: theme.palette.background.default,
+						display: 'flex',
 						alignItems: 'center',
-					}}
+						m: 2,
+						py: 1,
+					})}
 				>
-					<CoachrLogo
-						fontSize="large"
+					<IconButton
 						sx={{
-							mr: 1,
-						}}
-					/>
-					<Typography
-						variant="h5"
-						sx={{
-							fontFamily: 'Palanquin Dark',
-							fontWeight: '500',
-							pt: 0.5
+							mx: 1
 						}}
 					>
-						Coachr
-					</Typography>
-				</Toolbar>
+						<Avatar />
+					</IconButton>
+
+					<Box
+						sx={{
+							overflow: 'hidden',
+						}}
+					>
+						<Typography
+							sx={{
+								whiteSpace: 'nowrap'
+							}}
+						>
+							Kasper
+						</Typography>
+						<Typography
+							fontSize='small'
+							sx={(theme) => ({
+								color: theme.palette.text.secondary,
+								whiteSpace: 'no-wrap'
+							})}
+						>
+							medlem
+						</Typography>
+					</Box>
+				</Paper>
 				<Divider />
 				<List
 					disablePadding={true}
 					sx={{
 						px: 1,
+						my: 1
 					}}
 				>
 					{ListItemsArray.map(({ name, icon, path }) => {
@@ -74,10 +94,9 @@ export default function Sidenav() {
 								key={name}
 								component={Link}
 								to={path}
-								sx={(theme) => ({
-									borderRadius: theme.shape.borderRadius,
-									marginBlock: theme.spacing(0.5),
-								})}
+								sx={{
+									my: 0.5
+								}}
 								selected={selected}
 							>
 								<ListItemIcon
@@ -89,7 +108,6 @@ export default function Sidenav() {
 								</ListItemIcon>
 								<ListItemText
 									sx={(theme) => ({
-										fontWeight: 600,
 										color: selected
 											? theme.palette.secondary.main
 											: theme.palette.text.primary,

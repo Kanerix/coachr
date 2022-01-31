@@ -53,11 +53,14 @@ export default function TitleMenu() {
 				alignItems: 'center',
 				px: 1,
 				WebkitAppRegion: 'drag',
+				height: titleMenuHeight
 			}}
 		>
 			<Typography
 				sx={{
 					flexGrow: 1,
+					fontSize: '14px',
+					fontWeight: 600
 				}}
 			>
 				Coachr
@@ -73,7 +76,7 @@ export default function TitleMenu() {
 						width: titleMenuHeight/2,
 						height: titleMenuHeight/2,
 						ml: 1,
-						':hover': {
+						'&:hover': {
 							backgroundColor: dark,
 						}
 					})}

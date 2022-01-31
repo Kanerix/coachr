@@ -1,8 +1,8 @@
-import { experimental_sx, Theme, ThemeOptions } from "@mui/material"
+import { experimental_sx as sx, Theme, ThemeOptions } from "@mui/material"
 
 export const BaseTheme: ThemeOptions = {
 	shape: {
-		borderRadius: 3,
+		borderRadius: 4,
 	},
 	typography: {
 		fontFamily: "Poppins, Roboto",
@@ -11,7 +11,7 @@ export const BaseTheme: ThemeOptions = {
 		MuiButton: {
             styleOverrides: {
                 root: {
-                    fontWeight: 500,
+                    fontWeight: 600,
                 }
             }
         },
@@ -28,25 +28,30 @@ export const BaseTheme: ThemeOptions = {
 				},
 			}
 		},
- MuiListItemButton: {
+ 		MuiListItemButton: {
             styleOverrides: {
-                root: experimental_sx((theme: Theme) => ({
+                root: sx((theme: Theme) => ({
                     color: theme.palette.text.primary,
+					borderRadius: theme.shape.borderRadius,
                     '&.Mui-selected': {
-                        color: theme.palette.secondary.dark,
-                        backgroundColor: theme.palette.secondary.light,
-                        '&:hover': {
-                            backgroundColor: theme.palette.secondary.light
-                        },
+                        background: theme.palette.background.default,
                         '& .MuiListItemIcon-root': {
-                            color: theme.palette.secondary.dark,
-                        }
+                            color: theme.palette.primary.main,
+                        },
+                       '& .MuiListItemText-root': {
+                            color: theme.palette.primary.main,
+                        },
+						'&:hover': {
+                        	background: theme.palette.background.default,
+						}
                     },
                     '&:hover': {
-                        backgroundColor: theme.palette.secondary.light,
-                        color: theme.palette.secondary.dark,
+                        background: theme.palette.background.default,
                         '& .MuiListItemIcon-root': {
-                            color: theme.palette.secondary.dark,
+                            color: theme.palette.primary.main,
+                        },
+                        '& .MuiListItemText-root': {
+                            color: theme.palette.primary.main,
                         }
                     }
                 }))
@@ -54,17 +59,10 @@ export const BaseTheme: ThemeOptions = {
         },
         MuiListItemIcon: {
             styleOverrides: {
-                root: experimental_sx((theme: Theme) => ({
-                    color: theme.palette.text.secondary,
+                root: sx((theme: Theme) => ({
+                    color: theme.palette.text.primary,
                 }))
             }
-        },
-        MuiListItemText: {
-            styleOverrides: experimental_sx((theme: Theme) => ({
-                primary: {
-                    color: theme.palette.text.secondary
-                }
-            })),
-        },
+        }
 	},
 }

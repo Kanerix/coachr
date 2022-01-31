@@ -1,23 +1,24 @@
-import { faBullseye, faClock, faDashboard, faTrophy } from '@fortawesome/free-solid-svg-icons'
+import { faChartLine, faClock, faGear, faHome, faTrophy } from '@fortawesome/free-solid-svg-icons'
 
 import type { PageProps } from '../types/pages'
 import Achievements from './Achievments'
 import Dash from './Dash'
 import Goals from './Goals'
 import Reminders from './Reminders'
+import Settings from './Settings'
 
 const pages: PageProps[] = [
 	{
 		name: "Dashboard",
 		component: Dash(),
-		icon: faDashboard,
+		icon: faHome,
 		path: '/',
 		nav: true,
 	},
 	{
 		name: 'Goals',
 		component: Goals(),
-		icon: faBullseye,
+		icon: faChartLine,
 		path: '/goal',
 		nav: true,
 	},
@@ -35,6 +36,13 @@ const pages: PageProps[] = [
 		path: '/reminders',
 		nav: true,
 	},
+	{
+		name: 'Settings',
+		component: Settings(),
+		icon: faGear,
+		path: '/settings',
+		nav: false,
+	}
 ]
 
 export default pages

@@ -1,5 +1,4 @@
 import { Box, Grid, Paper, styled } from '@mui/material'
-import ReactApexChart from 'react-apexcharts'
 
 import PageHeader from '../components/PageHeader'
 
@@ -13,34 +12,7 @@ export default function Dash() {
 			<PageHeader header="Dashboard" />
 			<Grid container spacing={2} justifyContent="space-between">
 				<Grid item xs={4}>
-					<Item>
-						<ReactApexChart
-							options={{
-								chart: {
-									width: 380,
-									type: 'donut',
-								},
-								labels: ['Comedy'],
-								legend: {
-									show: false,
-								},
-								stroke: {
-									show: false,
-								},
-								states: {
-									active: {
-										filter: {
-											type: 'none',
-											value: 0.0,
-										},
-									},
-								},
-							}}
-							series={[44, 55, 13, 33]}
-							type="donut"
-							width={380}
-						/>
-					</Item>
+					<Item>sx=4</Item>
 				</Grid>
 				<Grid item xs={4}>
 					<Item>xs=4</Item>

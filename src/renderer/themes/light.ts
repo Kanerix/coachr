@@ -6,17 +6,20 @@ const lightTheme: ThemeOptions = createTheme({
 	palette: {
 		mode: 'light',
 		background: {
-			paper: "#ffffff",
+			paper: '#ffffff',
+			default: '#f7f9fd',
 		},
 		primary: {
-			light: "#e3f2fd",
-			main: "#2196f3",
-			dark: "#1e88e5",
+			light: '#2680eb',
+			main: '#1473e6',
+			dark: '#095aba',
+			contrastText: '#000000'
 		},
 		secondary: {
-			light: "#ede7f6",
-			main: "#673ab7",
-			dark: "#5e35b1",
+			light: '#2d9d78',
+			main: '#268e6c',
+			dark: '#107154',
+			contrastText: '#000000'
 		},
 	},
 })

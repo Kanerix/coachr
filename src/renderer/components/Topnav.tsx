@@ -11,6 +11,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7'
 
 import { drawerWidth } from './Sidenav'
 import { useColorMode } from '../context/ColorModeContext'
+import NotificationMenu from './NotificationMenu'
 
 export default function Topnav() {
 	const theme = useTheme()
@@ -32,6 +33,7 @@ export default function Topnav() {
 				<Toolbar>
 					<Box sx={{ flex: 1 }} />
 
+					<NotificationMenu />
 					<Tooltip title="Themes" arrow>
 						<IconButton
 							onClick={() =>
