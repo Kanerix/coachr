@@ -26,7 +26,7 @@ const pages: PageProps[] = [
 		name: 'Achievements',
 		component: Achievements(),
 		icon: faTrophy,
-		path: '/achievments',
+		path: '/achievements',
 		nav: true,
 	},
 	{

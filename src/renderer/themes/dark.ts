@@ -7,7 +7,7 @@ const darkTheme: ThemeOptions = createTheme({
 		mode: 'dark',
 		background: {
 			paper: '#0a0b0d',
-			default: '#141519',
+			default: '#111216',
 		},
 		primary: {
 			light: '#2680eb',

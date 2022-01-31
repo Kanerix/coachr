@@ -1,4 +1,4 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	List,
 	ListItemIcon,
@@ -10,46 +10,49 @@ import {
 	Avatar,
 	Typography,
 	IconButton,
-} from '@mui/material'
-import { Box } from '@mui/system'
-import { Link, useLocation } from 'react-router-dom'
-import SimpleBar from 'simplebar-react'
+} from "@mui/material";
+import { Box } from "@mui/system";
+import { Link, useLocation } from "react-router-dom";
+import SimpleBar from "simplebar-react";
 
-import pages from '../pages/_app'
-import { titleMenuHeight } from './TitleMenu'
+import pages from "../pages/_app";
+import { titleMenuHeight } from "./TitleMenu";
 
-export const drawerWidth = 240
+export const drawerWidth = 240;
 
 export default function Sidenav() {
-	const location = useLocation()
+	const location = useLocation();
 
-	const ListItemsArray = pages.filter((page) => page.nav)
+	const ListItemsArray = pages.filter((page) => page.nav);
 
 	return (
 		<Drawer
 			variant="permanent"
 			open={true}
 			sx={(theme) => ({
-				'& .MuiDrawer-paper': {
+				"& .MuiDrawer-paper": {
 					width: `${drawerWidth}px`,
 					mt: `${titleMenuHeight}px`,
 					borderTop: `solid 1px ${theme.palette.divider}`,
+					borderRadius: 0,
 				},
 			})}
 		>
-			<SimpleBar style={{ height: '100%' }}>
+			<SimpleBar style={{ height: "100%" }}>
 				<Paper
+					variant="elevation"
 					sx={(theme) => ({
 						background: theme.palette.background.default,
-						display: 'flex',
-						alignItems: 'center',
-						m: 2,
+						display: "flex",
+						alignItems: "center",
+						mx: 1,
+						my: 2,
 						py: 1,
 					})}
 				>
 					<IconButton
 						sx={{
-							mx: 1
+							mx: 1,
 						}}
 					>
 						<Avatar />
@@ -57,21 +60,21 @@ export default function Sidenav() {
 
 					<Box
 						sx={{
-							overflow: 'hidden',
+							overflow: "hidden",
 						}}
 					>
 						<Typography
 							sx={{
-								whiteSpace: 'nowrap'
+								whiteSpace: "nowrap",
 							}}
 						>
 							Kasper
 						</Typography>
 						<Typography
-							fontSize='small'
+							fontSize="small"
 							sx={(theme) => ({
 								color: theme.palette.text.secondary,
-								whiteSpace: 'no-wrap'
+								whiteSpace: "no-wrap",
 							})}
 						>
 							medlem
@@ -83,11 +86,11 @@ export default function Sidenav() {
 					disablePadding={true}
 					sx={{
 						px: 1,
-						my: 1
+						my: 1,
 					}}
 				>
 					{ListItemsArray.map(({ name, icon, path }) => {
-						const selected = location.pathname === path
+						const selected = location.pathname === path;
 
 						return (
 							<ListItemButton
@@ -95,7 +98,7 @@ export default function Sidenav() {
 								component={Link}
 								to={path}
 								sx={{
-									my: 0.5
+									my: 0.5,
 								}}
 								selected={selected}
 							>
@@ -115,10 +118,10 @@ export default function Sidenav() {
 									primary={name}
 								/>
 							</ListItemButton>
-						)
+						);
 					})}
 				</List>
 			</SimpleBar>
 		</Drawer>
-	)
+	);
 }
