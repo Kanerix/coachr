@@ -16,7 +16,7 @@ import type { Notification } from "../types/notification";
 
 export default function NotificationMenu() {
 	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-	const [notifications] = useState<Notification[]>([
+	const [notifications, setNotifications] = useState<Notification[]>([
 		{
 			name: "Goal",
 			description: "Goal completed!",
@@ -90,6 +90,16 @@ export default function NotificationMenu() {
 						</MenuItem>
 					))}
 				</MenuList>
+				<Typography
+					onClick={() => setNotifications([])}
+					sx={(theme) => ({
+						mx: 1,
+						textColor: theme.palette.text.secondary,
+						textDecoration: "underline",
+					})}
+				>
+					clear
+				</Typography>
 			</Menu>
 		</>
 	);
