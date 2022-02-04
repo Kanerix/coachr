@@ -1,10 +1,9 @@
-// eslint-disable-next-line no-undef
 module.exports = {
 	'env': {
-		'es6': true,
+		'browser': true,
+		'commonjs': true,
+		'es2021': true,
 		'node': true,
-		'es2020': true,
-		'browser': true
 	},
 	'extends': [
 		'eslint:recommended',
@@ -16,8 +15,7 @@ module.exports = {
 		'ecmaFeatures': {
 			'jsx': true
 		},
-		'ecmaVersion': 'latest',
-		'sourceType': 'module'
+		'ecmaVersion': 'latest'
 	},
 	'plugins': [
 		'react',
@@ -48,5 +46,5 @@ module.exports = {
 		'.git',
 		'build',
 		'webpack'
-	]
+	],
 }

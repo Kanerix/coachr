@@ -1,43 +1,45 @@
-import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBell, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
 	Badge,
+	Box,
 	IconButton,
 	Menu,
 	MenuItem,
 	MenuList,
 	Tooltip,
 	Typography,
-} from "@mui/material";
-import { MouseEvent, useState } from "react";
-import { Link } from "react-router-dom";
+} from '@mui/material'
+import { MouseEvent, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-import type { Notification } from "../types/notification";
+import type { Notification } from '../types/notification'
 
 export default function NotificationMenu() {
-	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
+	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
 	const [notifications, setNotifications] = useState<Notification[]>([
 		{
-			name: "Goal",
-			description: "Goal completed!",
-			to: "/goal",
+			name: 'Goal',
+			description: 'Goal completed!',
+			to: '/goal',
 		},
 		{
-			name: "Reminder",
-			description: "You'r missing 28% of your goal",
-			to: "/reminders",
+			name: 'Reminder',
+			description: 'You\'re missing 28% of your goal',
+			to: '/reminders',
 		},
 		{
-			name: "Achievements",
-			description: "You have completed an achievement!",
-			to: "/achievements",
+			name: 'Achievements',
+			description: 'You have completed an achievement!',
+			to: '/achievements',
 		},
-	]);
+	])
 
 	return (
 		<>
 			<Tooltip title="Notifications" arrow>
 				<IconButton
+					disabled={notifications.length === 0}
 					sx={{
 						m: 0.5,
 						width: 40,
@@ -59,8 +61,8 @@ export default function NotificationMenu() {
 				anchorEl={anchorEl}
 				open={Boolean(anchorEl)}
 				onClose={() => setAnchorEl(null)}
-				anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-				transformOrigin={{ vertical: "top", horizontal: "right" }}
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+				transformOrigin={{ vertical: 'top', horizontal: 'right' }}
 				MenuListProps={{
 					sx: {
 						p: 0,
@@ -68,21 +70,52 @@ export default function NotificationMenu() {
 					},
 				}}
 			>
-				<Typography
+				<Box
 					sx={(theme) => ({
 						px: 2,
 						py: 1,
 						background: theme.palette.primary.main,
-						color: theme.palette.primary.contrastText,
+						display: 'flex',
+						alignItems: 'center',
+						color: theme.palette.primary.contrastText
 					})}
 				>
-					Notifications
-				</Typography>
+					<Typography
+						color="inherit"
+						sx={{
+							flexGrow: 1,
+						}}
+					>
+						Notifications
+					</Typography>
+					<IconButton
+						size="small"
+						color="inherit"
+						sx={{
+							width: 30,
+							height: 30,
+						}}
+						onClick={() => {
+							setAnchorEl(null)
+							setNotifications([])
+						}}
+					>
+						<FontAwesomeIcon icon={faTrashCan} />
+					</IconButton>
+				</Box>
 				<MenuList>
 					{notifications.map(({ description, to }, idx) => (
 						<MenuItem
 							key={idx}
-							onClick={() => setAnchorEl(null)}
+							onClick={() => {
+								setNotifications((old) =>
+									old.filter(
+										(item) =>
+											item.description !== description
+									)
+								)
+								setAnchorEl(null)
+							}}
 							component={Link}
 							to={to}
 						>
@@ -90,17 +123,7 @@ export default function NotificationMenu() {
 						</MenuItem>
 					))}
 				</MenuList>
-				<Typography
-					onClick={() => setNotifications([])}
-					sx={(theme) => ({
-						mx: 1,
-						textColor: theme.palette.text.secondary,
-						textDecoration: "underline",
-					})}
-				>
-					clear
-				</Typography>
 			</Menu>
 		</>
-	);
+	)
 }

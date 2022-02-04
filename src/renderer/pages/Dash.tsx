@@ -11,16 +11,16 @@ export default function Dash() {
 		<Box>
 			<PageHeader header="Dashboard" />
 			<Grid container spacing={2} justifyContent="space-between">
-				<Grid item xs={12} sm={6} md={4}>
+				<Grid item xs={12} sm={12} md={6}>
 					<Item>sx=4</Item>
 				</Grid>
-				<Grid item xs={12} sm={6} md={4}>
+				<Grid item xs={12} sm={12} md={6}>
 					<Item>xs=4</Item>
 				</Grid>
-				<Grid item xs={12} sm={6} md={4}>
+				<Grid item xs={12} sm={12} md={6}>
 					<Item>xs=4</Item>
 				</Grid>
-				<Grid item xs={12} sm={6} md={4}>
+				<Grid item xs={12} sm={12} md={6}>
 					<Item>xs=4</Item>
 				</Grid>
 			</Grid>
