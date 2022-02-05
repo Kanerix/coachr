@@ -1,5 +1,11 @@
+import { Box } from "@mui/material";
+
+import PageHeader from "../components/PageHeader";
+
 export default function Settings() {
 	return (
-		<div>Settings</div>
-	)
+		<Box>
+			<PageHeader header="Settings" />
+		</Box>
+	);
 }
