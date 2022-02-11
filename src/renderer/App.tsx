@@ -1,7 +1,7 @@
-import "@fontsource/roboto"
-import "@fontsource/poppins"
-import "@fontsource/palanquin-dark"
-import "simplebar/dist/simplebar.min.css"
+import '@fontsource/roboto'
+import '@fontsource/poppins'
+import '@fontsource/palanquin-dark'
+import 'simplebar/dist/simplebar.min.css'
 
 import { Box, CssBaseline } from '@mui/material'
 import { HashRouter, Route, Routes } from 'react-router-dom'
@@ -27,11 +27,11 @@ export default function App() {
 					})}
 				>
 					<Routes>
-						{pages.map(({ path, component }, index) => (
+						{pages.map((item, index) => (
 							<Route
 								key={index}
-								path={path}
-								element={component}
+								path={item.path}
+								element={item.component}
 							/>
 						))}
 					</Routes>

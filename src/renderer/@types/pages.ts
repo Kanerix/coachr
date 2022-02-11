@@ -8,3 +8,8 @@ export interface PageProps {
 	path: string
 	nav: boolean
 }
+
+export interface Exercise {
+	name: string
+	done: boolean
+}

@@ -27,7 +27,7 @@ export default function Sidenav() {
 
 	return (
 		<Drawer
-			variant="permanent"
+			variant='permanent'
 			open={true}
 			sx={(theme) => ({
 				'& .MuiDrawer-paper': {
@@ -35,12 +35,13 @@ export default function Sidenav() {
 					mt: `${titleMenuHeight}px`,
 					borderTop: `solid 1px ${theme.palette.divider}`,
 					borderRadius: 0,
+					borderLeft: 'none',
 				},
 			})}
 		>
 			<SimpleBar style={{ height: '100%' }}>
 				<Paper
-					variant="elevation"
+					variant='elevation'
 					sx={(theme) => ({
 						background: theme.palette.background.default,
 						display: 'flex',
@@ -54,6 +55,8 @@ export default function Sidenav() {
 						sx={{
 							mx: 1,
 						}}
+						component={Link}
+						to='/settings'
 					>
 						<Avatar />
 					</IconButton>
@@ -71,7 +74,7 @@ export default function Sidenav() {
 							Kasper
 						</Typography>
 						<Typography
-							fontSize="small"
+							fontSize='small'
 							sx={(theme) => ({
 								color: theme.palette.text.secondary,
 								whiteSpace: 'no-wrap',
