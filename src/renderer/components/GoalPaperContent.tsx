@@ -6,7 +6,6 @@ import {
 	Icon,
 	List,
 	ListItemButton,
-	FormControlLabel,
 	Typography,
 	Button,
 	ButtonGroup,
@@ -53,21 +52,19 @@ export default function GoalPaperContent({
 								)
 							}}
 						>
-							<FormControlLabel
-								control={
-									<Checkbox
-										checked={item.done}
-										disableRipple={true}
-										sx={{
-											mr: 1,
-											'&:hover': {
-												background: 'none',
-											},
-										}}
-									/>
-								}
-								label={item.name}
-							/>
+							<Box
+								sx={{
+									mr: 1,
+									display: 'flex',
+									alignItems: 'center',
+								}}
+							>
+								<Checkbox
+									checked={item.done}
+									disableRipple={true}
+								/>
+								<Typography>{item.name}</Typography>
+							</Box>
 						</ListItemButton>
 					))}
 				</List>
