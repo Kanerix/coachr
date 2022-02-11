@@ -35,6 +35,7 @@ module.exports = {
 			'error',
 			'single'
 		],
+		'avoidEscape': true,
 		'semi': [
 			'error',
 			'never'

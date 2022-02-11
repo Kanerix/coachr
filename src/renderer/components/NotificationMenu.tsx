@@ -13,7 +13,7 @@ import {
 import { MouseEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import type { Notification } from '../types/notification'
+import type { Notification } from '../@types/notification'
 
 export default function NotificationMenu() {
 	const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
@@ -25,7 +25,7 @@ export default function NotificationMenu() {
 		},
 		{
 			name: 'Reminder',
-			description: 'You\'re missing 28% of your goal',
+			description: "You're missing 28% of your goal",
 			to: '/reminders',
 		},
 		{
@@ -37,7 +37,7 @@ export default function NotificationMenu() {
 
 	return (
 		<>
-			<Tooltip title="Notifications" arrow>
+			<Tooltip title='Notifications' arrow>
 				<IconButton
 					disabled={notifications.length === 0}
 					sx={{
@@ -51,7 +51,7 @@ export default function NotificationMenu() {
 				>
 					<Badge
 						badgeContent={notifications.length}
-						color="secondary"
+						color='secondary'
 					>
 						<FontAwesomeIcon icon={faBell} />
 					</Badge>
@@ -77,11 +77,11 @@ export default function NotificationMenu() {
 						background: theme.palette.primary.main,
 						display: 'flex',
 						alignItems: 'center',
-						color: theme.palette.primary.contrastText
+						color: theme.palette.primary.contrastText,
 					})}
 				>
 					<Typography
-						color="inherit"
+						color='inherit'
 						sx={{
 							flexGrow: 1,
 						}}
@@ -89,8 +89,8 @@ export default function NotificationMenu() {
 						Notifications
 					</Typography>
 					<IconButton
-						size="small"
-						color="inherit"
+						size='small'
+						color='inherit'
 						sx={{
 							width: 30,
 							height: 30,
