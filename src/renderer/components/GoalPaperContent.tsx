@@ -37,17 +37,19 @@ export default function GoalPaperContent({
 					{exercises.map((item, itemIndex) => (
 						<ListItemButton
 							key={itemIndex}
+							dense={true}
 							sx={{
 								width: '100%',
+								my: 0.5,
 							}}
 							onClick={() => {
-								setExercises(
-									exercises.map((item, index) => {
-										if (itemIndex == index) {
-											item.done = !item.done
+								setExercises((old) =>
+									old.map((exercise) => {
+										if (exercise == item) {
+											exercise.done = !exercise.done
 										}
 
-										return item
+										return exercise
 									})
 								)
 							}}
@@ -101,8 +103,8 @@ export default function GoalPaperContent({
 				<Button>Create new</Button>
 				<Button
 					onClick={() =>
-						setExercises(
-							exercises.filter((exercise) => !exercise.done)
+						setExercises((old) =>
+							old.filter((exercise) => !exercise.done)
 						)
 					}
 				>

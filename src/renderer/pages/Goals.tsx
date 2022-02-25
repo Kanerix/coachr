@@ -1,51 +1,37 @@
-<<<<<<< Updated upstream
 import { useState } from 'react'
 import { Box, Grid, Paper } from '@mui/material'
 
+import type { Exercise } from '../@types/pages'
 import GoalPaperContent from '../components/GoalPaperContent'
 import PageHeader from '../components/PageHeader'
-import type { Exercise } from '../@types/pages'
-=======
-import {
-	Box,
-	Divider,
-	Grid,
-	List,
-	ListItemButton,
-	Paper,
-	Typography,
-} from "@mui/material";
-
-import PageHeader from "../components/PageHeader";
->>>>>>> Stashed changes
 
 export default function Goals() {
 	const [postureExercises, setPostureExercises] = useState<Exercise[]>([
 		{
-			name: 'Boogie downs',
+			name: '10 x Boogie downs',
 			done: true,
 		},
 		{
-			name: 'Boogie ups',
+			name: '20 x Boogie ups',
 			done: false,
 		},
 		{
-			name: 'Boogie downs 2.0',
+			name: '10 x Boogie downs 2.0',
 			done: false,
 		},
 	])
 
 	const [muscleExercises, setMuscleExercises] = useState<Exercise[]>([
 		{
-			name: 'Big boy pushups',
+			name: '10 x Big boy pushups',
 			done: true,
 		},
 		{
-			name: 'Push downs',
+			name: '20 x Push downs',
 			done: true,
 		},
 		{
-			name: 'Armting',
+			name: '5 x Armting',
 			done: false,
 		},
 	])
@@ -63,7 +49,7 @@ export default function Goals() {
 						<GoalPaperContent
 							exercises={postureExercises}
 							setExercises={setPostureExercises}
-							name='Postur'
+							name='Posture'
 						/>
 					</Paper>
 				</Grid>
@@ -73,26 +59,14 @@ export default function Goals() {
 							p: 2,
 						}}
 					>
-<<<<<<< Updated upstream
 						<GoalPaperContent
 							exercises={muscleExercises}
 							setExercises={setMuscleExercises}
 							name='Muscle'
 						/>
-=======
-						<Typography fontSize={22} sx={{ px: 1 }}>
-							Posture
-						</Typography>
-						<Divider />
-						<List>
-							<ListItemButton>test123</ListItemButton>
-						</List>
-						<Divider />
-						<Box>test</Box>
->>>>>>> Stashed changes
 					</Paper>
 				</Grid>
 			</Grid>
 		</Box>
-	);
+	)
 }

@@ -1,27 +1,27 @@
-import { createTheme, ThemeOptions } from "@mui/material";
-import { BaseTheme } from "./base";
+import { createTheme, ThemeOptions } from '@mui/material'
+import { BaseTheme } from './base'
 
 const lightTheme: ThemeOptions = createTheme({
 	...BaseTheme,
 	palette: {
-		mode: "light",
+		mode: 'light',
 		background: {
-			paper: "#ffffff",
-			default: "#f1f3f4",
+			paper: '#ffffff',
+			default: '#f7f9fd',
 		},
 		primary: {
-			light: "#2680eb",
-			main: "#1473e6",
-			dark: "#095aba",
-			contrastText: "#000000",
+			light: '#2680eb',
+			main: '#1473e6',
+			dark: '#095aba',
+			contrastText: '#000000',
 		},
 		secondary: {
-			light: "#2d9d78",
-			main: "#268e6c",
-			dark: "#107154",
-			contrastText: "#ffffff",
+			light: '#2d9d78',
+			main: '#268e6c',
+			dark: '#107154',
+			contrastText: '#ffffff',
 		},
 	},
-});
+})
 
-export default lightTheme;
+export default lightTheme
